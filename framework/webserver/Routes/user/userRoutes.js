@@ -1,15 +1,19 @@
 import userController from "../../../../adaptors/controller/userController.js"
-import userSrvInterface from "../../../../applicatioin/services/userSrvInter.js"
+import userRepInterface from "../../../../applicatioin/repositories/userRepoInter.js"
 import userRepoImplements from "../../../db/repositories/userRepoImp.js"
 const userRoutes=(express)=>{
 
-
-    console.log('succes from routes')
+    
+    console.log('reach routes')
+    
     const router=express.Router()
 
-    const controller=userController(userSrvInterface,userRepoImplements)
+    //sending ineterface and implements to controller
+    const controller=userController(userRepInterface,userRepoImplements)
 
     router.route('/register').post(controller.createUser)
+
+    return router
 
      
 

@@ -14,6 +14,9 @@ const app=express()
 //Create Server
 const server=http.createServer(app)
 
+//configure the server
+serverConfig(server,config).startServer()
+
 //Connect Db
 connectDb(config)
 
@@ -23,8 +26,7 @@ expressConfig(app)
 //Routes config
 routes(app,express)
 
-//configure the server
-serverConfig(server,config).startServer()
+
 
 
 
