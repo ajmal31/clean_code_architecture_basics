@@ -7,6 +7,5 @@ const userShema=new Schema({
     
 })
 
-const user =mongoose.model('clean-users',userShema)
+export const userModel =mongoose.model('clean-users',userShema)
 
-export default user

@@ -1,18 +1,35 @@
+import {userModel} from "../models/user.js"
 const userRepoImplements=()=>{
     
     const createUser=async (user)=>{
        
-        console.log('user data got in userRepo implements')
-        console.log('user details')
+        
         let name=user?.getName()
         let email=user?.getEmail()
-        console.log(name)
-        console.log(email)
         
-         
+        const userSchema=new userModel({
+
+            username:name,
+            email:email
+        })
+
+        const response=await userSchema.save()
+       
+        return response
+        
+        
+        
+
+    }
+
+    const findByEmail=async(email)=>{
+
+        const response=await userModel.findOne({email:email})
+        return response
 
     }
     return {
+        findByEmail,
         createUser
     }
 

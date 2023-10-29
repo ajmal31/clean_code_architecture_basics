@@ -13,6 +13,8 @@ const userRoutes=(express)=>{
 
     router.route('/register').post(controller.createUser)
 
+    router.route('/login').post(controller.loginUser)
+
     return router
 
      

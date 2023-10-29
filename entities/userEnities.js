@@ -1,7 +1,7 @@
 
 const userEntity=(name,email)=>{
 
-    console.log('entity')
+    
 
     return{
      
